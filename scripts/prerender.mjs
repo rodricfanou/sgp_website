@@ -55,7 +55,7 @@ copyDir(CLIENT, OUT);
 cpSync(join(OUT, "index.html"), join(OUT, "404.html"));
 
 // CNAME for custom domain
-writeFileSync(join(OUT, "CNAME"), "summitglobalproperty.com\n");
+writeFileSync(join(OUT, "CNAME"), "www.summitglobalproperty.com\n");
 
 server.kill();
 console.log(`\nDone. Output in ${OUT}`);
