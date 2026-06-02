@@ -30,7 +30,7 @@ const services = [
   {
     n: "01",
     title: "Corporate Housing",
-    body: "Customized accommodations for executives on extended assignments, traveling nurses, interns, and relocating new hires. Flexible terms, hospitality-grade furnishings.",
+    body: "Customized accommodations for executives on extended assignments, healthcare professionals, interns, and relocating new hires. Flexible terms, hospitality-grade furnishings.",
     bullets: [
       "Flexible 30+ night stays",
       "Furnished, fully equipped",
@@ -145,7 +145,7 @@ function ServicesPage() {
         <div className="container-x max-w-4xl text-center">
           <Quote className="h-10 w-10 text-gold mx-auto" strokeWidth={1.2} />
           <blockquote className="mt-8 text-2xl md:text-3xl leading-relaxed font-serif text-cream/90">
-            &ldquo;We placed six traveling nurses in Summit properties over nine
+            &ldquo;We placed six healthcare professionals in Summit properties over nine
             months. The homes were ready on day one, billing was painless, and
             our team felt genuinely taken care of. That&rsquo;s rare.&rdquo;
           </blockquote>

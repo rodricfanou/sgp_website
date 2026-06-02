@@ -13,7 +13,7 @@ export const Route = createFileRoute("/corporate-housing")({
       {
         name: "description",
         content:
-          "Furnished corporate housing for executives, traveling nurses, interns, and relocating teams. Flexible terms, hospitality-grade homes.",
+          "Furnished corporate housing for executives, healthcare professionals, interns, and relocating teams. Flexible terms, hospitality-grade homes.",
       },
       {
         property: "og:title",
@@ -62,7 +62,7 @@ const benefits = [
 ];
 
 const industries = [
-  "Healthcare & Traveling Nurses",
+  "Healthcare & Traveling Professionals",
   "Tech & Engineering",
   "Consulting & Professional Services",
   "Construction & Project Teams",
@@ -101,8 +101,8 @@ function CorporateHousingPage() {
             Your people deserve more than a hotel room.
           </h1>
           <p className="mt-6 md:mt-8 max-w-2xl text-cream/70 text-lg leading-relaxed">
-            Furnished, flexible, and worry-free homes for executives, traveling
-            nurses, rotating teams, and relocating employees. We handle every
+            Furnished, flexible, and worry-free homes for executives, healthcare
+            professionals, rotating teams, and relocating employees. We handle every
             detail — so you can focus on the work that matters.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">

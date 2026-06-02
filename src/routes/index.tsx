@@ -129,7 +129,7 @@ function HomePage() {
               <Briefcase className="h-8 w-8 text-gold group-hover:text-gold" strokeWidth={1.2} />
               <h3 className="mt-8 text-3xl md:text-4xl">I Need Corporate Housing</h3>
               <p className="mt-4 text-muted-foreground group-hover:text-cream/70 leading-relaxed max-w-sm">
-                Furnished, flexible homes for your team—executives, nurses,
+                Furnished, flexible homes for your team—executives, healthcare professionals,
                 interns, and relocating hires.
               </p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-gold group-hover:gap-3 transition-all">
@@ -176,7 +176,7 @@ function HomePage() {
               {
                 icon: KeyRound,
                 title: "Corporate Housing",
-                body: "Fully-furnished residences for executives, traveling nurses, interns, and relocating teams.",
+                body: "Fully-furnished residences for executives, healthcare professionals, interns, and relocating teams.",
                 link: "/corporate-housing",
               },
               {
@@ -290,7 +290,7 @@ function HomePage() {
         <div className="container-x max-w-4xl text-center">
           <Quote className="h-10 w-10 text-gold mx-auto" strokeWidth={1.2} />
           <blockquote className="mt-8 text-2xl md:text-3xl leading-relaxed font-serif text-cream/90">
-            &ldquo;We placed six traveling nurses in Summit properties over nine
+            &ldquo;We placed six healthcare professionals in Summit properties over nine
             months. The homes were ready on day one, billing was painless, and
             our team felt genuinely taken care of. That&rsquo;s rare.&rdquo;
           </blockquote>
