@@ -73,14 +73,17 @@ function AboutPage() {
           <div className="lg:col-span-5">
             <p className="eyebrow">Our story</p>
             <h2 className="mt-4 text-3xl md:text-4xl">
-              A decade of caring for homes — and the people in them.
+              Hospitality experience that{" "}
+              <span className="italic text-gold">sets us apart</span>.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              Summit Global Property began with a simple frustration: properties
-              weren't being treated like homes, and guests weren't being treated
-              like family.
+              Summit Global Property brings together deep experience in
+              hospitality operations, real estate management, and guest services.
+              Our team has managed properties across multiple markets, overseen
+              thousands of guest stays, and built systems that treat every home
+              with the same care we&rsquo;d give our own.
             </p>
             <p>
               Today we partner with corporations and private owners to deliver a
