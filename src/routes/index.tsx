@@ -56,28 +56,27 @@ function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/80" />
         <div className="container-x relative pb-16 md:pb-32 pt-36 text-cream">
-          <h1 className="mt-12 max-w-5xl font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
-            Managing Properties.
-            <br />
-            <span className="italic text-gold">Elevating</span> Value.
+          <h1 className="mt-12 max-w-4xl font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
+            Luxury Property Management &{" "}
+            <span className="italic text-gold">Corporate Housing</span>.
           </h1>
-          <p className="mt-6 md:mt-8 max-w-xl text-cream/80 text-base md:text-lg leading-relaxed">
-            We partner with homeowners and corporations to operate
-            fully-furnished residences — designed to feel like home for the
-            night, the season, or the year.
+          <p className="mt-6 md:mt-8 max-w-2xl text-cream/80 text-base md:text-lg leading-relaxed">
+            We help homeowners maximize&nbsp;income through professionally
+            managed furnished residences while providing exceptional stays for
+            executives, traveling professionals, and relocating teams.
           </p>
           <div className="mt-8 md:mt-10 flex flex-wrap gap-3 md:gap-4">
             <Link
               to="/contact"
               className="btn-primary bg-cream text-ink hover:bg-gold hover:text-gold-foreground text-center flex-1 sm:flex-none"
             >
-              Start a conversation
+              Partner With Us
             </Link>
             <Link
-              to="/contact"
+              to="/corporate-housing"
               className="btn-outline text-cream text-center flex-1 sm:flex-none"
             >
-              List your property
+              Request Corporate Housing
             </Link>
           </div>
         </div>
