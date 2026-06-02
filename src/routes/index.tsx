@@ -129,8 +129,8 @@ function HomePage() {
               <Briefcase className="h-8 w-8 text-gold group-hover:text-gold" strokeWidth={1.2} />
               <h3 className="mt-8 text-3xl md:text-4xl">I Need Corporate Housing</h3>
               <p className="mt-4 text-muted-foreground group-hover:text-cream/70 leading-relaxed max-w-sm">
-                Furnished, flexible homes for your team—executives, healthcare professionals,
-                interns, and relocating hires.
+                Furnished, flexible homes for your team—executives, interns,
+                relocating hires, and healthcare professionals.
               </p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-gold group-hover:gap-3 transition-all">
                 Learn more <ArrowRight className="h-3 w-3" />
@@ -176,7 +176,7 @@ function HomePage() {
               {
                 icon: KeyRound,
                 title: "Corporate Housing",
-                body: "Fully-furnished residences for executives, healthcare professionals, interns, and relocating teams.",
+                body: "Fully-furnished residences for executives, interns, relocating teams, and healthcare professionals.",
                 link: "/corporate-housing",
               },
               {

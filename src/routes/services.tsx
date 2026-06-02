@@ -30,7 +30,7 @@ const services = [
   {
     n: "01",
     title: "Corporate Housing",
-    body: "Customized accommodations for executives on extended assignments, healthcare professionals, interns, and relocating new hires. Flexible terms, hospitality-grade furnishings.",
+    body: "Customized accommodations for executives on extended assignments, interns, relocating new hires, and healthcare professionals. Flexible terms, hospitality-grade furnishings.",
     bullets: [
       "Flexible 30+ night stays",
       "Furnished, fully equipped",
