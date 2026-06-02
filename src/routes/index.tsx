@@ -282,29 +282,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="container-x py-20 md:py-40">
-        <div className="border-t border-border pt-16 md:pt-24 grid gap-12 lg:grid-cols-12 items-end">
-          <div className="lg:col-span-7">
-            <h2 className="text-5xl md:text-7xl leading-[0.95]">
-              Let's make your
-              <br /> property feel like
-              <br />
-              <span className="italic text-gold">home</span>.
-            </h2>
-          </div>
-          <div className="lg:col-span-5 lg:text-right">
-            <p className="text-muted-foreground max-w-md lg:ml-auto">
-              Tell us about your property or your stay. We typically respond
-              within one business day.
-            </p>
-            <Link to="/contact" className="btn-primary mt-8 inline-flex">
-              Start a conversation
-            </Link>
-          </div>
-        </div>
-      </section>
     </SiteLayout>
   );
 }
