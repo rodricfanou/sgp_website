@@ -17,7 +17,6 @@ import {
   Users,
   CalendarCheck,
   TrendingUp,
-  Quote,
   Home,
   Briefcase,
 } from "lucide-react";
@@ -285,25 +284,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: TESTIMONIAL */}
-      <section className="bg-ink text-cream py-20 md:py-40">
-        <div className="container-x max-w-4xl text-center">
-          <Quote className="h-10 w-10 text-gold mx-auto" strokeWidth={1.2} />
-          <blockquote className="mt-8 text-2xl md:text-3xl leading-relaxed font-serif text-cream/90">
-            &ldquo;We placed six healthcare professionals in Summit properties over nine
-            months. The homes were ready on day one, billing was painless, and
-            our team felt genuinely taken care of. That&rsquo;s rare.&rdquo;
-          </blockquote>
-          <div className="mt-8">
-            <p className="font-medium text-cream">— Director of Talent,</p>
-            <p className="text-cream/50 text-sm">
-              Regional healthcare system, Southeast
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 8: ABOUT SUMMIT (poetic copy moved lower) */}
+      {/* SECTION 7: ABOUT SUMMIT (poetic copy moved lower) */}
       <section className="py-20 md:py-40">
         <div className="container-x grid gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 space-y-6">
