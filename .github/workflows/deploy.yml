@@ -47,7 +47,7 @@ jobs:
             sleep 2
           done
           # Prerender each route
-          for route in "/" "/corporate-housing" "/services" "/about" "/properties" "/contact"; do
+          for route in "/" "/property-owners" "/corporate-housing" "/services" "/about" "/properties" "/contact"; do
             dir="_site$route"
             [ "$route" = "/" ] && dir="_site"
             mkdir -p "$dir"

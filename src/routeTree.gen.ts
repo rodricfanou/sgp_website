@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PropertyOwnersRouteImport } from './routes/property-owners'
 import { Route as PropertiesRouteImport } from './routes/properties'
 import { Route as CorporateHousingRouteImport } from './routes/corporate-housing'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -25,6 +26,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropertyOwnersRoute = PropertyOwnersRouteImport.update({
+  id: '/property-owners',
+  path: '/property-owners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PropertiesRoute = PropertiesRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/corporate-housing': typeof CorporateHousingRoute
   '/properties': typeof PropertiesRoute
+  '/property-owners': typeof PropertyOwnersRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/corporate-housing': typeof CorporateHousingRoute
   '/properties': typeof PropertiesRoute
+  '/property-owners': typeof PropertyOwnersRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/corporate-housing': typeof CorporateHousingRoute
   '/properties': typeof PropertiesRoute
+  '/property-owners': typeof PropertyOwnersRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate-housing'
     | '/properties'
+    | '/property-owners'
     | '/services'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate-housing'
     | '/properties'
+    | '/property-owners'
     | '/services'
     | '/sitemap.xml'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate-housing'
     | '/properties'
+    | '/property-owners'
     | '/services'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CorporateHousingRoute: typeof CorporateHousingRoute
   PropertiesRoute: typeof PropertiesRoute
+  PropertyOwnersRoute: typeof PropertyOwnersRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/property-owners': {
+      id: '/property-owners'
+      path: '/property-owners'
+      fullPath: '/property-owners'
+      preLoaderRoute: typeof PropertyOwnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/properties': {
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CorporateHousingRoute: CorporateHousingRoute,
   PropertiesRoute: PropertiesRoute,
+  PropertyOwnersRoute: PropertyOwnersRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

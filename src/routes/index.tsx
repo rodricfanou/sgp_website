@@ -85,13 +85,13 @@ function HomePage() {
               to="/contact"
               className="btn-primary bg-cream text-ink hover:bg-gold hover:text-gold-foreground text-center flex-1 sm:flex-none"
             >
-              Partner With Us
+              List Your Property
             </Link>
             <Link
               to="/corporate-housing"
               className="btn-outline text-cream text-center flex-1 sm:flex-none"
             >
-              Request Corporate Housing
+              Book Corporate Housing
             </Link>
           </div>
         </div>
@@ -337,7 +337,7 @@ function HomePage() {
           </div>
           <div className="mt-12 text-center">
             <Link to="/contact" className="btn-primary inline-flex">
-              Become an owner partner
+              List Your Property
             </Link>
           </div>
         </div>
@@ -441,7 +441,7 @@ function HomePage() {
               ))}
             </ul>
             <Link to="/contact" className="btn-outline text-cream inline-block">
-              Partner with us
+              Start Earning
             </Link>
           </div>
         </div>
