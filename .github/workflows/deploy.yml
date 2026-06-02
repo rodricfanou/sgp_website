@@ -54,6 +54,9 @@ jobs:
             curl -s "http://localhost:4174$route" > "$dir/index.html"
             echo "Prerendered $route"
           done
+          # Prerender sitemap (XML, not HTML)
+          curl -s "http://localhost:4174/sitemap.xml" > "_site/sitemap.xml"
+          echo "Prerendered /sitemap.xml"
           kill $PID 2>/dev/null || true
           # Copy client assets
           cp -r dist/client/* _site/

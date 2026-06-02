@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
+const BASE_URL = "https://summitglobalproperty.com";
 
 const entries = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/property-owners", changefreq: "monthly", priority: "0.9" },
+  { path: "/corporate-housing", changefreq: "monthly", priority: "0.9" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
   { path: "/services", changefreq: "monthly", priority: "0.8" },
   { path: "/properties", changefreq: "weekly", priority: "0.9" },
