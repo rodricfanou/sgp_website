@@ -220,17 +220,17 @@ function HomePage() {
       {/* SECTION 5: IMAGE GRID */}
       <section className="container-x">
         <div className="grid gap-4 md:gap-6 md:grid-cols-12">
-          <div className="md:col-span-7 aspect-[16/11] overflow-hidden">
+          <div className="md:col-span-7 overflow-hidden md:h-[420px]">
             <img
               src={interiorLiving}
               alt="Living room"
               width={1600}
               height={1100}
               loading="lazy"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-[center_12%]"
             />
           </div>
-          <div className="md:col-span-5 aspect-[4/5] md:aspect-auto overflow-hidden">
+          <div className="md:col-span-5 overflow-hidden md:h-[420px]">
             <img
               src={interiorKitchen}
               alt="Kitchen"
