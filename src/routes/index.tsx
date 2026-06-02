@@ -284,7 +284,66 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: ABOUT SUMMIT (poetic copy moved lower) */}
+      {/* SECTION 7: WHY OWNERS CHOOSE SUMMIT */}
+      <section className="py-20 md:py-40 bg-secondary">
+        <div className="container-x">
+          <div className="max-w-2xl mb-16">
+            <span className="gold-line" />
+            <p className="eyebrow mt-6">Why owners choose Summit</p>
+            <h2 className="mt-4 text-4xl md:text-5xl">
+              Full transparency. Real guarantees.{" "}
+              <span className="italic text-gold">Zero surprises</span>.
+            </h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="bg-background border border-border p-8 md:p-12">
+              <h3 className="text-2xl">Process transparency</h3>
+              <ul className="mt-8 space-y-5">
+                {[
+                  ["Monthly performance reports", "Occupancy rates, revenue breakdowns, and expense details — sent to your inbox every month."],
+                  ["Real-time booking dashboard", "Log in anytime to see upcoming reservations, guest profiles, and cleaning schedules."],
+                  ["Transparent fee structure", "No hidden charges. Management fees, cleaning, and maintenance costs are itemized on every statement."],
+                  ["Same-day maintenance alerts", "We notify you immediately of any repairs or issues, with photos and cost estimates before work begins."],
+                ].map(([t, b]) => (
+                  <li key={t} className="flex gap-4">
+                    <span className="text-gold mt-1 shrink-0">—</span>
+                    <div>
+                      <p className="font-medium text-foreground">{t}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{b}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-background border border-border p-8 md:p-12">
+              <h3 className="text-2xl">Service guarantees</h3>
+              <ul className="mt-8 space-y-5">
+                {[
+                  ["24-hour guest response", "Every guest message is acknowledged within one hour — day or night."],
+                  ["Professional cleaning guarantee", "If a guest arrives and something isn't right, we make it right within 4 hours or the stay is free."],
+                  ["On-time owner payout guarantee", "Deposits are sent by the 10th of every month. If we're late, we waive next month's management fee."],
+                  ["Vetted guest policy", "Every booking is screened. No parties, no subletting, no unregistered guests."],
+                ].map(([t, b]) => (
+                  <li key={t} className="flex gap-4">
+                    <span className="text-gold mt-1 shrink-0">—</span>
+                    <div>
+                      <p className="font-medium text-foreground">{t}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{b}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="mt-12 text-center">
+            <Link to="/contact" className="btn-primary inline-flex">
+              Become an owner partner
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 8: ABOUT SUMMIT (poetic copy moved lower) */}
       <section className="py-20 md:py-40">
         <div className="container-x grid gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 space-y-6">
