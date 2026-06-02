@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "A family-owned team building a more thoughtful approach to property management.",
+          "A modern team building a more thoughtful approach to property management.",
       },
       { property: "og:title", content: "About — Summit Global Property" },
       {
@@ -36,7 +36,7 @@ function AboutPage() {
           </div>
           <div className="lg:col-span-9">
             <h1 className="text-5xl md:text-7xl leading-[0.95]">
-              A family business
+              A modern business
               <br />
               built on <span className="italic text-gold">trust</span>,<br />
               hospitality, and craft.
