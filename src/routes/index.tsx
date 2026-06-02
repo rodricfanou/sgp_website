@@ -56,8 +56,7 @@ function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/80" />
         <div className="container-x relative pb-16 md:pb-32 pt-36 text-cream">
-          <p className="eyebrow !text-cream/70">Est. 2026</p>
-          <h1 className="mt-6 max-w-5xl font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
+          <h1 className="mt-12 max-w-5xl font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
             Managing Properties.
             <br />
             <span className="italic text-gold">Elevating</span> Value.
