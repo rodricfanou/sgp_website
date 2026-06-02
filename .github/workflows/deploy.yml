@@ -60,7 +60,7 @@ jobs:
           # 404 for SPA fallback
           cp _site/index.html _site/404.html
           # CNAME for custom domain
-          echo "www.summitglobalproperty.com" > _site/CNAME
+          echo "summitglobalproperty.com" > _site/CNAME
 
       - uses: actions/upload-pages-artifact@v3
         with:
