@@ -84,8 +84,8 @@ function AboutPage() {
             </p>
             <p>
               Today we partner with corporations and private owners to deliver a
-              stylish, modern renting experience — fully-furnished homes for
-              short stays, with the discipline of a hospitality business behind
+              stylish, modern renting experiences - fully -furnished homes for
+              as long as you wish, with the discipline of a hospitality business behind
               every reservation.
             </p>
             <p>
