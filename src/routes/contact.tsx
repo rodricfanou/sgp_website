@@ -39,7 +39,12 @@ function ContactPage() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
     );
-    window.location.href = `mailto:roderick@roderickfanou.com?subject=${subject}&body=${body}`;
+    const a = document.createElement("a");
+    a.href = `mailto:roderick@roderickfanou.com?subject=${subject}&body=${body}`;
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     setSent(true);
   }
 
