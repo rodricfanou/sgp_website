@@ -17,13 +17,15 @@ export function Footer() {
         </div>
         <div className="space-y-3 text-sm">
           <p className="eyebrow !text-cream/50">Company</p>
-          <Link to="/about" className="block text-cream/80 hover:text-cream">
-            About
+          <Link to="/corporate-housing" className="block text-cream/80 hover:text-cream">
+            Corporate Housing
           </Link>
           <Link to="/services" className="block text-cream/80 hover:text-cream">
             Services
           </Link>
-          {/* <Link to="/properties" className="block text-cream/80 hover:text-cream">Properties</Link> */}
+          <Link to="/about" className="block text-cream/80 hover:text-cream">
+            About
+          </Link>
           <Link to="/contact" className="block text-cream/80 hover:text-cream">
             Contact
           </Link>
@@ -31,7 +33,6 @@ export function Footer() {
         <div className="space-y-3 text-sm">
           <p className="eyebrow !text-cream/50">Contact</p>
           <p className="text-cream/80">roderick@roderickfanou.com</p>
-          <p className="text-cream/80">(XXX) XXX-XXXX</p>
           <p className="text-cream/80">Mon – Fri · 9a – 6p</p>
         </div>
       </div>

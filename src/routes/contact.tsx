@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Field } from "@/components/ui/Field";
 import { useState, type FormEvent } from "react";
-import { Mail, Phone, Check } from "lucide-react";
+import { Mail, Check } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -76,15 +76,7 @@ function ContactPage() {
                   <p className="mt-1">roderick@roderickfanou.com</p>
                 </div>
               </li>
-              <li className="flex items-start gap-4">
-                <Phone className="h-5 w-5 text-gold mt-1 shrink-0" />
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    Phone
-                  </p>
-                  <p className="mt-1">(XXX) XXX-XXXX</p>
-                </div>
-              </li>
+
             </ul>
           </aside>
 
