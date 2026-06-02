@@ -23,9 +23,9 @@ export function Footer() {
           <Link to="/corporate-housing" className="block text-cream/80 hover:text-cream">
             Corporate Housing
           </Link>
-          <Link to="/properties" className="block text-cream/80 hover:text-cream">
+          {/* <Link to="/properties" className="block text-cream/80 hover:text-cream">
             Properties
-          </Link>
+          </Link> */}
           <Link to="/services" className="block text-cream/80 hover:text-cream">
             Services
           </Link>
