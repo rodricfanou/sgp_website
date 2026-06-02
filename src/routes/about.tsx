@@ -80,9 +80,7 @@ function AboutPage() {
             <p>
               Summit Global Property began with a simple frustration: properties
               weren't being treated like homes, and guests weren't being treated
-              like family. What started as a single house has grown into a
-              curated collection across the Southeast, each one operated with
-              the same care.
+              like family.
             </p>
             <p>
               Today we partner with corporations and private owners to deliver a
