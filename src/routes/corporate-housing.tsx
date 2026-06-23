@@ -193,12 +193,15 @@ function CorporateHousingPage() {
         <div className="container-x">
           <div className="max-w-2xl mb-16">
             <span className="gold-line" />
+            {/*
             <p className="eyebrow mt-6 !text-cream/60">Industries we serve</p>
             <h2 className="mt-4 text-4xl md:text-5xl text-cream">
               We support the teams that keep things{" "}
               <span className="italic text-gold">moving</span>.
             </h2>
+            */}
           </div>
+          {/*
           <div className="grid gap-px bg-cream/10 border border-cream/10 md:grid-cols-3">
             {industries.map((ind) => (
               <div
@@ -210,6 +213,7 @@ function CorporateHousingPage() {
               </div>
             ))}
           </div>
+          */}
         </div>
       </section>
 
