@@ -292,14 +292,8 @@ function HomePage() {
               <span className="italic text-gold">Real results</span>.
             </h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: TrendingUp,
-                title: "Higher Revenue Potential",
-                body: "Short-term and corporate housing bookings earn 2–3x more than traditional long-term leases.",
-              },
-              {
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[{
                 icon: Users,
                 title: "Professional Guest Screening",
                 body: "Every booking is vetted. We only accept verified corporate clients and responsible travelers.",
