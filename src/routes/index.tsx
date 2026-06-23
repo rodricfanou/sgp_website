@@ -15,7 +15,6 @@ import {
   KeyRound,
   Clock,
   Users,
-  CalendarCheck,
   TrendingUp,
   Home,
   Briefcase,
@@ -50,13 +49,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const stats = [
-  { icon: Clock, label: "24-hour response", desc: "Guest support team on call" },
-  { icon: Users, label: "100% verified", desc: "Vetted guests and corporate clients" },
-  { icon: CalendarCheck, label: "Deep cleaned", desc: "Professional cleaning after every stay" },
-  { icon: TrendingUp, label: "Monthly payouts", desc: "Transparent owner deposits, on time" },
-];
-
 function HomePage() {
   return (
     <SiteLayout>
@@ -72,26 +64,25 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/80" />
         <div className="container-x relative pb-16 md:pb-32 pt-36 text-cream">
           <h1 className="mt-12 max-w-4xl font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
-            Luxury Property Management &{" "}
-            <span className="italic text-gold">Corporate Housing</span>.
+            Earn More From Your Property.{" "}
+            <span className="italic text-gold">We Handle Everything.</span>
           </h1>
           <p className="mt-6 md:mt-8 max-w-2xl text-cream/80 text-base md:text-lg leading-relaxed">
-            We help homeowners maximize&nbsp;income through professionally
-            managed furnished residences while providing exceptional stays for
-            executives, traveling professionals, and relocating teams.
+            Professional property management and corporate housing solutions for
+            homeowners seeking higher returns and less hassle.
           </p>
           <div className="mt-8 md:mt-10 flex flex-wrap gap-3 md:gap-4">
             <Link
               to="/contact"
               className="btn-primary bg-cream text-ink hover:bg-gold hover:text-gold-foreground text-center flex-1 sm:flex-none"
             >
-              List Your Property
+              List My Property
             </Link>
             <Link
-              to="/corporate-housing"
+              to="/contact"
               className="btn-outline text-cream text-center flex-1 sm:flex-none"
             >
-              Book Corporate Housing
+              Schedule a Call
             </Link>
           </div>
         </div>
@@ -101,9 +92,10 @@ function HomePage() {
       <section className="py-20 md:py-32">
         <div className="container-x">
           <div className="max-w-2xl mb-12">
-            <p className="eyebrow">Who we serve</p>
+            <p className="eyebrow">Choose your path</p>
             <h2 className="mt-4 text-4xl md:text-5xl">
-              Tell us <span className="italic text-gold">who you are</span>.
+              What brings you{" "}
+              <span className="italic text-gold">here today</span>?
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -112,10 +104,9 @@ function HomePage() {
               className="group block bg-secondary border border-border p-10 md:p-14 hover:bg-ink hover:text-cream transition-all duration-500"
             >
               <Home className="h-8 w-8 text-gold group-hover:text-gold" strokeWidth={1.2} />
-              <h3 className="mt-8 text-3xl md:text-4xl">I Own Property</h3>
+              <h3 className="mt-8 text-3xl md:text-4xl">Property Owners</h3>
               <p className="mt-4 text-muted-foreground group-hover:text-cream/70 leading-relaxed max-w-sm">
-                Maximize your income with professional management, vetted
-                guests, and reliable monthly payouts.
+                Increase income without managing guests, cleaners, or maintenance.
               </p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-gold group-hover:gap-3 transition-all">
                 Get started <ArrowRight className="h-3 w-3" />
@@ -126,10 +117,9 @@ function HomePage() {
               className="group block bg-secondary border border-border p-10 md:p-14 hover:bg-ink hover:text-cream transition-all duration-500"
             >
               <Briefcase className="h-8 w-8 text-gold group-hover:text-gold" strokeWidth={1.2} />
-              <h3 className="mt-8 text-3xl md:text-4xl">I Need Corporate Housing</h3>
+              <h3 className="mt-8 text-3xl md:text-4xl">Corporate Housing</h3>
               <p className="mt-4 text-muted-foreground group-hover:text-cream/70 leading-relaxed max-w-sm">
-                Furnished, flexible homes for your team—executives, interns,
-                relocating hires, and healthcare professionals.
+                Flexible furnished housing for executives, healthcare professionals, and relocating teams.
               </p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-gold group-hover:gap-3 transition-all">
                 Learn more <ArrowRight className="h-3 w-3" />
@@ -139,21 +129,23 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 3: STATS / TRUST */}
+      {/* SECTION 3: TRUST BAR */}
       <section className="border-y border-border bg-secondary">
-        <div className="container-x py-14 md:py-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-            {stats.map(({ icon: Icon, label, desc }) => (
-              <div key={label}>
-                <Icon
-                  className="h-6 w-6 text-gold"
-                  strokeWidth={1.4}
-                />
-                <p className="mt-4 text-sm uppercase tracking-[0.18em] font-medium text-foreground">
-                  {label}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
-              </div>
+        <div className="container-x py-8 md:py-10">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm">
+            {[
+              "Vetted Corporate Guests",
+              "Monthly Owner Payouts",
+              "Professional Cleaning",
+              "Full-Service Management",
+              "24-Hour Guest Support",
+            ].map((item) => (
+              <span key={item} className="inline-flex items-center gap-2 text-muted-foreground">
+                <svg className="h-4 w-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                {item}
+              </span>
             ))}
           </div>
         </div>
@@ -254,22 +246,27 @@ function HomePage() {
               <span className="italic text-gold">first guest</span>.
             </h2>
           </div>
-          <div className="grid gap-px bg-border border border-border md:grid-cols-3">
+          <div className="grid gap-px bg-border border border-border md:grid-cols-4">
             {[
               {
                 n: "01",
-                title: "Tell us about your property",
-                body: "Share a few details online or over the phone. We'll schedule a walkthrough within 48 hours.",
+                title: "Property Review",
+                body: "We evaluate your property, discuss goals, and create a custom plan to maximize income.",
               },
               {
                 n: "02",
-                title: "We prepare and list",
-                body: "Our team handles furnishing, photography, pricing, and listing across major booking platforms.",
+                title: "Launch",
+                body: "Our team furnishes, photographs, and lists your property across top booking platforms.",
               },
               {
                 n: "03",
-                title: "You collect monthly income",
-                body: "We manage everything—guests, cleaning, maintenance—and deposit your earnings monthly.",
+                title: "Management",
+                body: "We handle guests, cleaning, maintenance, and 24/7 support so you don't have to.",
+              },
+              {
+                n: "04",
+                title: "Monthly Income",
+                body: "You receive reliable monthly payouts with full transparency on every booking.",
               },
             ].map(({ n, title, body }) => (
               <div key={n} className="bg-background p-8 md:p-12">
@@ -284,56 +281,46 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: WHY OWNERS CHOOSE SUMMIT */}
+      {/* SECTION 7: RESULTS */}
       <section className="py-20 md:py-40 bg-secondary">
         <div className="container-x">
           <div className="max-w-2xl mb-16">
             <span className="gold-line" />
             <p className="eyebrow mt-6">Why owners choose Summit</p>
             <h2 className="mt-4 text-4xl md:text-5xl">
-              Full transparency. Real guarantees.{" "}
-              <span className="italic text-gold">Zero surprises</span>.
+              More income. Less stress.{" "}
+              <span className="italic text-gold">Real results</span>.
             </h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-background border border-border p-8 md:p-12">
-              <h3 className="text-2xl">Process transparency</h3>
-              <ul className="mt-8 space-y-5">
-                {[
-                  ["Monthly performance reports", "Occupancy rates, revenue breakdowns, and expense details — sent to your inbox every month."],
-                  ["Real-time booking dashboard", "Log in anytime to see upcoming reservations, guest profiles, and cleaning schedules."],
-                  ["Transparent fee structure", "No hidden charges. Management fees, cleaning, and maintenance costs are itemized on every statement."],
-                  ["Same-day maintenance alerts", "We notify you immediately of any repairs or issues, with photos and cost estimates before work begins."],
-                ].map(([t, b]) => (
-                  <li key={t} className="flex gap-4">
-                    <span className="text-gold mt-1 shrink-0">—</span>
-                    <div>
-                      <p className="font-medium text-foreground">{t}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{b}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-background border border-border p-8 md:p-12">
-              <h3 className="text-2xl">Service guarantees</h3>
-              <ul className="mt-8 space-y-5">
-                {[
-                  ["24-hour guest response", "Every guest message is acknowledged within one hour — day or night."],
-                  ["Professional cleaning guarantee", "If a guest arrives and something isn't right, we make it right within 4 hours or the stay is free."],
-                  ["On-time owner payout guarantee", "Deposits are sent by the 10th of every month. If we're late, we waive next month's management fee."],
-                  ["Vetted guest policy", "Every booking is screened. No parties, no subletting, no unregistered guests."],
-                ].map(([t, b]) => (
-                  <li key={t} className="flex gap-4">
-                    <span className="text-gold mt-1 shrink-0">—</span>
-                    <div>
-                      <p className="font-medium text-foreground">{t}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{b}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: TrendingUp,
+                title: "Higher Revenue Potential",
+                body: "Short-term and corporate housing bookings earn 2–3x more than traditional long-term leases.",
+              },
+              {
+                icon: Users,
+                title: "Professional Guest Screening",
+                body: "Every booking is vetted. We only accept verified corporate clients and responsible travelers.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Property Protection",
+                body: "Daily professional cleaning and regular maintenance preserve your home's condition.",
+              },
+              {
+                icon: Clock,
+                title: "Hands-Off Ownership",
+                body: "We manage everything — marketing, bookings, cleaning, and support — so you stay free.",
+              },
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-background border border-border p-8 md:p-10">
+                <Icon className="h-7 w-7 text-gold" strokeWidth={1.4} />
+                <h3 className="mt-6 text-xl font-medium">{title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </div>
+            ))}
           </div>
           <div className="mt-12 text-center">
             <Link to="/contact" className="btn-primary inline-flex">
@@ -343,34 +330,48 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 8: ABOUT SUMMIT (poetic copy moved lower) */}
+      {/* SECTION 8: WHY SUMMIT */}
       <section className="py-20 md:py-40">
         <div className="container-x grid gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 space-y-6">
             <span className="gold-line" />
-            <p className="eyebrow">About Summit Global Property</p>
+            <p className="eyebrow">Why Summit Global Property</p>
             <h2 className="text-4xl md:text-5xl">
-              A modern approach to property management.
+              We do the work.{" "}
+              <span className="italic text-gold">You earn the returns.</span>
             </h2>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-relaxed">
+          <div className="lg:col-span-6 lg:col-start-7 space-y-8 text-muted-foreground leading-relaxed">
             <p>
-              We believe a home is more than four walls — it&rsquo;s the way
-              light falls on a kitchen counter in the morning, the comfort of
-              fresh linens after a long day, the quiet confidence that every
-              detail has been considered.
+              We help homeowners increase income through professionally
+              managed furnished residences. Our team handles everything —
+              from marketing and guest screening to cleaning and maintenance.
             </p>
-            <p>
-              Summit Global Property partners with corporations and private
-              owners to maximize the efficiency of your holdings while
-              mitigating the wear of long-term tenants. The result: passive
-              freedom for you, and a stylish, modern experience for your guests.
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
+              {[
+                "Professional marketing",
+                "Guest screening",
+                "Deep cleaning",
+                "Ongoing maintenance",
+                "Dynamic pricing",
+                "24/7 guest support",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-foreground">
+                  <svg className="h-3.5 w-3.5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="text-foreground font-medium">
+              You receive monthly income without the daily workload.
             </p>
             <Link
-              to="/about"
+              to="/contact"
               className="inline-flex items-center gap-2 text-foreground font-medium border-b border-foreground pb-1 hover:gap-3 transition-all"
             >
-              Our story <ArrowUpRight className="h-4 w-4" />
+              Start earning <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
