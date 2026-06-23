@@ -242,6 +242,7 @@ function CorporateHousingPage() {
       </section>
 
       {/* CTA */}
+      {false && (
       <section className="bg-secondary border-y border-border py-20 md:py-40">
         <div className="container-x text-center">
           <h2 className="text-4xl md:text-6xl max-w-3xl mx-auto">
@@ -259,6 +260,7 @@ function CorporateHousingPage() {
           </Link>
         </div>
       </section>
+      )}
     </SiteLayout>
   );
 }

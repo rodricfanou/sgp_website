@@ -151,7 +151,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4: BENEFITS / WHAT WE DO */}
+{false && (
       <section className="py-20 md:py-40">
         <div className="container-x">
           <div className="max-w-2xl mb-16">
@@ -208,8 +208,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+      )}
 
-      {/* SECTION 5: IMAGE GRID */}
+      {false && (
       <section className="container-x">
         <div className="grid gap-4 md:gap-6 md:grid-cols-12">
           <div className="md:col-span-7 overflow-hidden md:h-[420px]">
@@ -234,6 +235,7 @@ function HomePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* SECTION 6: HOW IT WORKS */}
       <section className="py-20 md:py-40">
@@ -242,31 +244,26 @@ function HomePage() {
             <span className="gold-line" />
             <p className="eyebrow mt-6">How it works</p>
             <h2 className="mt-4 text-4xl md:text-5xl">
-              From first call to{" "}
-              <span className="italic text-gold">first guest</span>.
+              Tell us your needs.{" "}
+              <span className="italic text-gold">We'll handle the rest.</span>
             </h2>
           </div>
-          <div className="grid gap-px bg-border border border-border md:grid-cols-4">
+          <div className="grid gap-px bg-border border border-border md:grid-cols-3">
             {[
               {
                 n: "01",
-                title: "Property Review",
-                body: "We evaluate your property, discuss goals, and create a custom plan to maximize income.",
+                title: "Tell us your needs",
+                body: "Number of guests, locations, duration, and any specific requirements.",
               },
               {
                 n: "02",
-                title: "Launch",
-                body: "Our team furnishes, photographs, and lists your property across top booking platforms.",
+                title: "We curate your options",
+                body: "We match from our portfolio or source a home that fits your standards.",
               },
               {
                 n: "03",
-                title: "Management",
-                body: "We handle guests, cleaning, maintenance, and 24/7 support so you don't have to.",
-              },
-              {
-                n: "04",
-                title: "Monthly Income",
-                body: "You receive reliable monthly payouts with full transparency on every booking.",
+                title: "One invoice, one point of contact",
+                body: "Centralized billing and a dedicated account manager for every booking.",
               },
             ].map(({ n, title, body }) => (
               <div key={n} className="bg-background p-8 md:p-12">
