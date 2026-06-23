@@ -116,7 +116,7 @@ function CorporateHousingPage() {
         </div>
       </section>
 
-      {/* STATS */}
+      {/*
       <section className="border-y border-border bg-secondary">
         <div className="container-x py-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -132,6 +132,7 @@ function CorporateHousingPage() {
           ))}
         </div>
       </section>
+      */}
 
       {/* BENEFITS */}
       <section className="py-20 md:py-40">
