@@ -179,7 +179,7 @@ function PropertyOwnersPage() {
         <div className="container-x">
           <div className="max-w-2xl mb-16">
             <span className="gold-line" />
-            <p className="eyebrow mt-6">How it works</p>
+            <p className="eyebrow mt-6">How SGP works</p>
             <h2 className="mt-4 text-4xl md:text-5xl">
               From listing to your first{" "}
               <span className="italic text-gold">deposit</span>.

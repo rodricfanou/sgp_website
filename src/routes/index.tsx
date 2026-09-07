@@ -27,6 +27,11 @@ import {
   TrendingUp,
   Home,
   Briefcase,
+  Wallet,
+  Handshake,
+  CalendarCheck,
+  Wrench,
+  MessageSquareText,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -99,6 +104,28 @@ function HomePage() {
         </div>
       </section>
 
+      {/* SECTION 3: TRUST BAR */}
+      <section className="border-y border-border bg-secondary">
+        <div className="container-x py-8 md:py-10">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm">
+            {[
+              "Vetted Corporate Guests",
+              "Monthly Owner Payouts",
+              "Professional Cleaning",
+              "Full-Service Management",
+              "24-Hour Guest Support",
+            ].map((item) => (
+              <span key={item} className="inline-flex items-center gap-2 text-muted-foreground">
+                <svg className="h-4 w-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2: CHOOSE YOUR PATH */}
       <section className="py-20 md:py-32">
         <div className="container-x">
@@ -136,28 +163,6 @@ function HomePage() {
                 Learn more <ArrowRight className="h-3 w-3" />
               </span>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3: TRUST BAR */}
-      <section className="border-y border-border bg-secondary">
-        <div className="container-x py-8 md:py-10">
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm">
-            {[
-              "Vetted Corporate Guests",
-              "Monthly Owner Payouts",
-              "Professional Cleaning",
-              "Full-Service Management",
-              "24-Hour Guest Support",
-            ].map((item) => (
-              <span key={item} className="inline-flex items-center gap-2 text-muted-foreground">
-                <svg className="h-4 w-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                {item}
-              </span>
-            ))}
           </div>
         </div>
       </section>
@@ -253,7 +258,7 @@ function HomePage() {
         <div className="container-x">
           <div className="max-w-2xl mb-16">
             <span className="gold-line" />
-            <p className="eyebrow mt-6">How it works</p>
+            <p className="eyebrow mt-6">How SGP works</p>
             <h2 className="mt-4 text-4xl md:text-5xl">
               Tell us your needs.{" "}
               <span className="italic text-gold">We'll handle the rest.</span>
@@ -281,6 +286,67 @@ function HomePage() {
                 <span className="font-serif text-5xl text-gold">{n}</span>
                 <h3 className="mt-6 text-2xl">{title}</h3>
                 <p className="mt-4 text-muted-foreground text-sm leading-relaxed">
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6A: WHY PROPERTY OWNERS TRUST US */}
+      <section className="py-20 md:py-40 bg-secondary">
+        <div className="container-x">
+          <div className="max-w-2xl mb-16">
+            <span className="gold-line" />
+            <p className="eyebrow mt-6">Why property owners trust us</p>
+            <h2 className="mt-4 text-4xl md:text-5xl">
+              Why Property Owners{" "}
+              <span className="italic text-gold">Trust Us</span>.
+            </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              SGP brings together dependable management, attentive property
+              care, and clear communication to create a more confident and
+              streamlined ownership experience.
+            </p>
+          </div>
+          <div className="grid gap-px bg-border border border-border md:grid-cols-3">
+            {[
+              {
+                icon: Wallet,
+                title: "Dependable Payments",
+                body: "Enjoy consistent, timely payments designed to bring greater predictability and confidence to property ownership.",
+              },
+              {
+                icon: Handshake,
+                title: "Professional Partnership",
+                body: "Work with a trusted team committed to professional service and long-term property care.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Greater Stability",
+                body: "Longer lease terms help create greater stability while reducing turnover and tenant replacement costs.",
+              },
+              {
+                icon: CalendarCheck,
+                title: "Consistent Occupancy",
+                body: "Active management helps keep your property well positioned and reduce unnecessary vacancy.",
+              },
+              {
+                icon: Wrench,
+                title: "Proactive Property Care",
+                body: "Routine maintenance and oversight help protect your property's condition and long-term value.",
+              },
+              {
+                icon: MessageSquareText,
+                title: "Reliable Communication",
+                body: "Stay informed with clear updates, responsive support, and straightforward communication.",
+              },
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-background p-8 md:p-12">
+                <Icon className="h-7 w-7 text-gold" strokeWidth={1.4} />
+                <h3 className="mt-6 text-xl font-medium">{title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {body}
                 </p>
               </div>

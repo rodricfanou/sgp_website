@@ -223,7 +223,7 @@ function CorporateHousingPage() {
         <div className="container-x">
           <div className="max-w-2xl mb-16">
             <span className="gold-line" />
-            <p className="eyebrow mt-6">How it works</p>
+            <p className="eyebrow mt-6">How SGP works</p>
             <h2 className="mt-4 text-4xl md:text-5xl">
               Fast setup. Simple process.{" "}
               <span className="italic text-gold">Zero hassle</span>.
