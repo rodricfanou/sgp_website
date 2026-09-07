@@ -63,7 +63,7 @@ export function ImageCarousel({
         if (event.key === "Enter" || event.key === " ") goNext();
       }}
       aria-label="Show next image"
-      className={`relative overflow-hidden cursor-pointer ${className}`}
+      className={`overflow-hidden cursor-pointer ${className}`}
     >
       {images.map(({ src, alt }, i) => (
         <img

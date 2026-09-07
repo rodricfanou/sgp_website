@@ -397,7 +397,7 @@ function HomePage() {
         <div className="container-x py-20 md:py-40 grid gap-12 md:gap-16 lg:grid-cols-2 items-center">
           <div className="relative aspect-[4/5] overflow-hidden">
             <ImageCarousel
-              className="h-full w-full"
+              className="relative h-full w-full"
               images={[
                 { src: interiorBedroom, alt: "Bedroom" },
                 { src: inside3, alt: "Bedroom interior" },
