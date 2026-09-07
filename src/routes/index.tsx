@@ -6,6 +6,17 @@ import heroHome from "@/assets/hero-home.jpg";
 import interiorKitchen from "@/assets/interior-kitchen.jpg";
 import interiorLiving from "@/assets/interior-living.jpg";
 import interiorBedroom from "@/assets/interior-bedroom.jpg";
+import { ImageCarousel } from "@/components/site/ImageCarousel";
+import outside1 from "@/assets/slides/outside1.jpg";
+import outside2 from "@/assets/slides/outside2.jpg";
+import outside3 from "@/assets/slides/outside3.jpg";
+import outside4 from "@/assets/slides/outside4.jpg";
+import room2 from "@/assets/slides/room2.jpg";
+import inside2 from "@/assets/slides/inside2.jpg";
+import inside3 from "@/assets/slides/inside3.jpg";
+import inside4 from "@/assets/slides/inside4.jpg";
+import kitchen3 from "@/assets/slides/kitchen3.jpg";
+import livingkitchen1 from "@/assets/slides/livingkitchen1.jpg";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -54,12 +65,15 @@ function HomePage() {
     <SiteLayout>
       {/* SECTION 1: HERO */}
       <section className="relative min-h-[100svh] flex items-end overflow-hidden">
-        <img
-          src={heroHome}
-          alt="Luxury home at golden hour"
-          width={1920}
-          height={1280}
-          className="absolute inset-0 h-full w-full object-cover"
+        <ImageCarousel
+          className="absolute inset-0"
+          images={[
+            { src: heroHome, alt: "Luxury home at golden hour" },
+            { src: outside3, alt: "Home exterior at dusk" },
+            { src: outside1, alt: "Luxury home exterior" },
+            { src: outside4, alt: "Property exterior at twilight" },
+            { src: outside2, alt: "Home exterior at sunset" },
+          ]}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/80" />
         <div className="container-x relative pb-16 md:pb-32 pt-36 text-cream">
@@ -382,13 +396,17 @@ function HomePage() {
       <section className="bg-ink text-cream">
         <div className="container-x py-20 md:py-40 grid gap-12 md:gap-16 lg:grid-cols-2 items-center">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <img
-              src={interiorBedroom}
-              alt="Bedroom"
-              width={1200}
-              height={1500}
-              loading="lazy"
-              className="h-full w-full object-cover"
+            <ImageCarousel
+              className="h-full w-full"
+              images={[
+                { src: interiorBedroom, alt: "Bedroom" },
+                { src: inside3, alt: "Bedroom interior" },
+                { src: inside4, alt: "Bright interior" },
+                { src: room2, alt: "Bedroom" },
+                { src: inside2, alt: "Interior" },
+                { src: kitchen3, alt: "Kitchen" },
+                { src: livingkitchen1, alt: "Living kitchen" },
+              ]}
             />
           </div>
           <div className="space-y-8">
