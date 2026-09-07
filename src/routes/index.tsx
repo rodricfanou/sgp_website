@@ -377,10 +377,10 @@ function HomePage() {
         <div className="container-x grid gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 space-y-6">
             <span className="gold-line" />
-            <p className="eyebrow">Why Summit Global Property</p>
+            <p className="eyebrow">The Summit Global Property Way</p>
             <h2 className="text-4xl md:text-5xl">
-              We do the work.{" "}
-              <span className="italic text-gold">You earn the returns.</span>
+              A higher standard for{" "}
+              <span className="italic text-gold">property management.</span>
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-8 text-muted-foreground leading-relaxed">
@@ -539,15 +539,27 @@ function HomePage() {
         <div className="container-x grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5 space-y-6">
             <span className="gold-line" />
-            <p className="eyebrow">Get in touch</p>
+            <p className="eyebrow">Ready to partner with Summit?</p>
             <h2 className="text-4xl md:text-5xl">
-              Tell us about your{" "}
-              <span className="italic text-gold">project</span>.
+              Ready to Earn More From Your{" "}
+              <span className="italic text-gold">Property?</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              Owners, corporate clients, and travelers are all welcome. Share a
-              few details and we'll respond within one business day.
+              Let Summit handle the day-to-day work while you enjoy the benefits
+              of professionally managed ownership. Tell us about your property
+              and let's explore its potential.
             </p>
+            <div className="flex flex-wrap gap-3 md:gap-4 pt-2">
+              <a href="#inquiry" className="btn-primary">
+                List My Property
+              </a>
+              <a
+                href="#inquiry"
+                className="btn-outline inline-flex text-center"
+              >
+                Schedule a Call
+              </a>
+            </div>
           </div>
           <div className="lg:col-span-7">
             <InquiryForm />
