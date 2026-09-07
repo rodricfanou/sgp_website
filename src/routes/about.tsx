@@ -81,13 +81,10 @@ function AboutPage() {
             <p>
               Summit Global Property brings together deep experience in
               hospitality operations, real estate management, and guest services.
-              Our team has managed properties across multiple markets, overseen
-              thousands of guest stays, and built systems that treat every home
-              with the same care we&rsquo;d give our own.
             </p>
             <p>
               Today we partner with corporations and private owners to deliver a
-              stylish, modern renting experiences - fully -furnished homes for
+              stylish, modern renting experiences - fully - furnished homes for
               as long as you wish, with the discipline of a hospitality business behind
               every reservation.
             </p>
