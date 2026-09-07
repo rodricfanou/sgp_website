@@ -104,28 +104,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 3: TRUST BAR */}
-      <section className="border-y border-border bg-secondary">
-        <div className="container-x py-8 md:py-10">
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm">
-            {[
-              "Vetted Corporate Guests",
-              "Monthly Owner Payouts",
-              "Professional Cleaning",
-              "Full-Service Management",
-              "24-Hour Guest Support",
-            ].map((item) => (
-              <span key={item} className="inline-flex items-center gap-2 text-muted-foreground">
-                <svg className="h-4 w-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 2: CHOOSE YOUR PATH */}
       <section className="py-20 md:py-32">
         <div className="container-x">
@@ -163,6 +141,28 @@ function HomePage() {
                 Learn more <ArrowRight className="h-3 w-3" />
               </span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: TRUST BAR */}
+      <section className="border-y border-border bg-secondary">
+        <div className="container-x py-8 md:py-10">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm">
+            {[
+              "Vetted Corporate Guests",
+              "Monthly Owner Payouts",
+              "Professional Cleaning",
+              "Full-Service Management",
+              "24-Hour Guest Support",
+            ].map((item) => (
+              <span key={item} className="inline-flex items-center gap-2 text-muted-foreground">
+                <svg className="h-4 w-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -253,48 +253,50 @@ function HomePage() {
       </section>
       )}
 
-      {/* SECTION 6: HOW IT WORKS */}
+      {/* SECTION 4: WHY OWNERS CHOOSE SUMMIT */}
       <section className="py-20 md:py-40">
         <div className="container-x">
           <div className="max-w-2xl mb-16">
             <span className="gold-line" />
-            <p className="eyebrow mt-6">How SGP works</p>
+            <p className="eyebrow mt-6">Why owners choose Summit</p>
             <h2 className="mt-4 text-4xl md:text-5xl">
-              Tell us your needs.{" "}
-              <span className="italic text-gold">We'll handle the rest.</span>
+              More income. Less stress.{" "}
+              <span className="italic text-gold">Real results</span>.
             </h2>
           </div>
-          <div className="grid gap-px bg-border border border-border md:grid-cols-3">
-            {[
-              {
-                n: "01",
-                title: "Tell us your needs",
-                body: "Number of guests, locations, duration, and any specific requirements.",
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[{
+                icon: Users,
+                title: "Professional Guest Screening",
+                body: "Every booking is vetted. We only accept verified corporate clients and responsible travelers.",
               },
               {
-                n: "02",
-                title: "We curate your options",
-                body: "We match from our portfolio or source a home that fits your standards.",
+                icon: ShieldCheck,
+                title: "Property Protection",
+                body: "Daily professional cleaning and regular maintenance preserve your home's condition.",
               },
               {
-                n: "03",
-                title: "One invoice, one point of contact",
-                body: "Centralized billing and a dedicated account manager for every booking.",
+                icon: Clock,
+                title: "Hands-Off Ownership",
+                body: "We manage everything — marketing, bookings, cleaning, and support — so you stay free.",
               },
-            ].map(({ n, title, body }) => (
-              <div key={n} className="bg-background p-8 md:p-12">
-                <span className="font-serif text-5xl text-gold">{n}</span>
-                <h3 className="mt-6 text-2xl">{title}</h3>
-                <p className="mt-4 text-muted-foreground text-sm leading-relaxed">
-                  {body}
-                </p>
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-background border border-border p-8 md:p-10">
+                <Icon className="h-7 w-7 text-gold" strokeWidth={1.4} />
+                <h3 className="mt-6 text-xl font-medium">{title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{body}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link to="/contact" className="btn-primary inline-flex">
+              List Your Property
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* SECTION 6A: WHY PROPERTY OWNERS TRUST US */}
+      {/* SECTION 5: WHY PROPERTY OWNERS TRUST US */}
       <section className="py-20 md:py-40 bg-secondary">
         <div className="container-x">
           <div className="max-w-2xl mb-16">
@@ -355,50 +357,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: RESULTS */}
-      <section className="py-20 md:py-40 bg-secondary">
-        <div className="container-x">
-          <div className="max-w-2xl mb-16">
-            <span className="gold-line" />
-            <p className="eyebrow mt-6">Why owners choose Summit</p>
-            <h2 className="mt-4 text-4xl md:text-5xl">
-              More income. Less stress.{" "}
-              <span className="italic text-gold">Real results</span>.
-            </h2>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[{
-                icon: Users,
-                title: "Professional Guest Screening",
-                body: "Every booking is vetted. We only accept verified corporate clients and responsible travelers.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "Property Protection",
-                body: "Daily professional cleaning and regular maintenance preserve your home's condition.",
-              },
-              {
-                icon: Clock,
-                title: "Hands-Off Ownership",
-                body: "We manage everything — marketing, bookings, cleaning, and support — so you stay free.",
-              },
-            ].map(({ icon: Icon, title, body }) => (
-              <div key={title} className="bg-background border border-border p-8 md:p-10">
-                <Icon className="h-7 w-7 text-gold" strokeWidth={1.4} />
-                <h3 className="mt-6 text-xl font-medium">{title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link to="/contact" className="btn-primary inline-flex">
-              List Your Property
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 8: WHY SUMMIT */}
+      {/* SECTION 6: WHY SUMMIT */}
       <section className="py-20 md:py-40">
         <div className="container-x grid gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 space-y-6">
@@ -445,17 +404,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* BRAND STAMP */}
-      <section className="bg-ink py-20 md:py-28 border-y border-gold/20">
-        <div className="container-x flex flex-col items-center text-center">
-          <Logo size="xl" static />
-          <p className="mt-10 font-serif italic text-gold text-xl md:text-2xl tracking-wide">
-            Managing Properties. Elevating Value.
-          </p>
-        </div>
-      </section>
-
-      {/* SECTION 9: OWNER SPLIT */}
+      {/* SECTION 7: OWNER SPLIT */}
       <section className="bg-ink text-cream">
         <div className="container-x py-20 md:py-40 grid gap-12 md:gap-16 lg:grid-cols-2 items-center">
           <div className="relative aspect-[4/5] overflow-hidden">
@@ -475,7 +424,7 @@ function HomePage() {
             <span className="gold-line" />
             <p className="eyebrow !text-cream/60">For owners</p>
             <h2 className="text-cream text-4xl md:text-5xl">
-              Why list your property with us?
+              Why Partner With Us?
             </h2>
             <ul className="space-y-6">
               {[
@@ -516,6 +465,57 @@ function HomePage() {
               Start Earning
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* SECTION 8: HOW SGP WORKS */}
+      <section className="py-20 md:py-40">
+        <div className="container-x">
+          <div className="max-w-2xl mb-16">
+            <span className="gold-line" />
+            <p className="eyebrow mt-6">How SGP works</p>
+            <h2 className="mt-4 text-4xl md:text-5xl">
+              Tell us your needs.{" "}
+              <span className="italic text-gold">We'll handle the rest.</span>
+            </h2>
+          </div>
+          <div className="grid gap-px bg-border border border-border md:grid-cols-3">
+            {[
+              {
+                n: "01",
+                title: "Tell us your needs",
+                body: "Number of guests, locations, duration, and any specific requirements.",
+              },
+              {
+                n: "02",
+                title: "We curate your options",
+                body: "We match from our portfolio or source a home that fits your standards.",
+              },
+              {
+                n: "03",
+                title: "One invoice, one point of contact",
+                body: "Centralized billing and a dedicated account manager for every booking.",
+              },
+            ].map(({ n, title, body }) => (
+              <div key={n} className="bg-background p-8 md:p-12">
+                <span className="font-serif text-5xl text-gold">{n}</span>
+                <h3 className="mt-6 text-2xl">{title}</h3>
+                <p className="mt-4 text-muted-foreground text-sm leading-relaxed">
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9: BRAND STAMP */}
+      <section className="bg-ink py-20 md:py-28 border-y border-gold/20">
+        <div className="container-x flex flex-col items-center text-center">
+          <Logo size="xl" static />
+          <p className="mt-10 font-serif italic text-gold text-xl md:text-2xl tracking-wide">
+            Managing Properties. Elevating Value.
+          </p>
         </div>
       </section>
 
