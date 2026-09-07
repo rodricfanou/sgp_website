@@ -21,7 +21,6 @@ import living4 from "@/assets/slides/living4.jpg";
 import livingkitchen1 from "@/assets/slides/livingkitchen1.jpg";
 import {
   ArrowRight,
-  ArrowUpRight,
   Building2,
   Sparkles,
   ShieldCheck,
@@ -352,7 +351,7 @@ function HomePage() {
               {
                 icon: Wrench,
                 title: "Proactive Property Care",
-                body: "Routine maintenance and oversight help protect your property's condition and long-term value.",
+                body: "Routine property inspections, professional cleaning, and proactive maintenance help protect your property's condition and long-term value.",
               },
               {
                 icon: MessageSquareText,
@@ -372,50 +371,47 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 6: WHY SUMMIT */}
+      {/* SECTION 6: THE SUMMIT GLOBAL PROPERTY WAY */}
       <section className="py-20 md:py-40">
-        <div className="container-x grid gap-16 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-5 space-y-6">
+        <div className="container-x">
+          <div className="max-w-2xl mb-16">
             <span className="gold-line" />
-            <p className="eyebrow">The Summit Global Property Way</p>
-            <h2 className="text-4xl md:text-5xl">
+            <p className="eyebrow mt-6">The Summit Global Property Way</p>
+            <h2 className="mt-4 text-4xl md:text-5xl">
               A higher standard for{" "}
               <span className="italic text-gold">property management.</span>
             </h2>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 space-y-8 text-muted-foreground leading-relaxed">
-            <p>
-              We help homeowners increase income through professionally
-              managed furnished residences. Our team handles everything —
-              from marketing and guest screening to cleaning and maintenance.
-            </p>
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
-              {[
-                "Professional marketing",
-                "Guest screening",
-                "Deep cleaning",
-                "Ongoing maintenance",
-                "Dynamic pricing",
-                "24/7 guest support",
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-foreground">
-                  <svg className="h-3.5 w-3.5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-foreground font-medium">
-              You receive monthly income without the daily workload.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 text-foreground font-medium border-b border-foreground pb-1 hover:gap-3 transition-all"
-            >
-              Start earning <ArrowUpRight className="h-4 w-4" />
-            </Link>
+          <div className="grid gap-px bg-border border border-border lg:grid-cols-3">
+            {[
+              {
+                icon: ShieldCheck,
+                label: "Protect the property",
+                body: "Careful guest screening, secure access, routine property inspections, professional cleaning, and proactive maintenance help protect your property's condition and long-term value.",
+              },
+              {
+                icon: TrendingUp,
+                label: "Maximize the potential",
+                body: "Professional marketing, dynamic pricing, and active occupancy management help position your property to perform while reducing unnecessary vacancy.",
+              },
+              {
+                icon: Sparkles,
+                label: "Elevate the experience",
+                body: "Responsive support, clear communication, and professionally managed stays create a better experience for owners and guests alike.",
+              },
+            ].map(({ icon: Icon, label, body }) => (
+              <div key={label} className="bg-background p-8 md:p-12">
+                <Icon className="h-7 w-7 text-gold" strokeWidth={1.4} />
+                <h3 className="mt-6 text-2xl">{label}</h3>
+                <p className="mt-4 text-muted-foreground text-sm leading-relaxed">
+                  {body}
+                </p>
+              </div>
+            ))}
           </div>
+          <p className="mt-16 text-center font-serif italic text-gold text-2xl md:text-4xl tracking-wide">
+            Protect. Maximize. Elevate.
+          </p>
         </div>
       </section>
 

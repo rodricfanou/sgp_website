@@ -17,18 +17,18 @@ export function Footer() {
         </div>
         <div className="space-y-3 text-sm">
           <p className="eyebrow !text-cream/50">Company</p>
-          <Link to="/property-owners" className="block text-cream/80 hover:text-cream">
+          {/* <Link to="/property-owners" className="block text-cream/80 hover:text-cream">
             Property Owners
-          </Link>
-          <Link to="/corporate-housing" className="block text-cream/80 hover:text-cream">
+          </Link> */}
+          {/* <Link to="/corporate-housing" className="block text-cream/80 hover:text-cream">
             Corporate Housing
-          </Link>
+          </Link> */}
           {/* <Link to="/properties" className="block text-cream/80 hover:text-cream">
             Properties
           </Link> */}
-          <Link to="/services" className="block text-cream/80 hover:text-cream">
+          {/* <Link to="/services" className="block text-cream/80 hover:text-cream">
             Services
-          </Link>
+          </Link> */}
           <Link to="/about" className="block text-cream/80 hover:text-cream">
             About
           </Link>
