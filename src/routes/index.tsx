@@ -9,9 +9,7 @@ import interiorBedroom from "@/assets/interior-bedroom.jpg";
 import { ImageCarousel } from "@/components/site/ImageCarousel";
 import outside1 from "@/assets/slides/outside1.jpg";
 import outside2 from "@/assets/slides/outside2.jpg";
-import outside3 from "@/assets/slides/outside3.jpg";
 import outside4 from "@/assets/slides/outside4.jpg";
-import room2 from "@/assets/slides/room2.jpg";
 import inside2 from "@/assets/slides/inside2.jpg";
 import inside3 from "@/assets/slides/inside3.jpg";
 import inside4 from "@/assets/slides/inside4.jpg";
@@ -69,7 +67,6 @@ function HomePage() {
           className="absolute inset-0"
           images={[
             { src: heroHome, alt: "Luxury home at golden hour" },
-            { src: outside3, alt: "Home exterior at dusk" },
             { src: outside1, alt: "Luxury home exterior" },
             { src: outside4, alt: "Property exterior at twilight" },
             { src: outside2, alt: "Home exterior at sunset" },
@@ -402,7 +399,6 @@ function HomePage() {
                 { src: interiorBedroom, alt: "Bedroom" },
                 { src: inside3, alt: "Bedroom interior" },
                 { src: inside4, alt: "Bright interior" },
-                { src: room2, alt: "Bedroom" },
                 { src: inside2, alt: "Interior" },
                 { src: kitchen3, alt: "Kitchen" },
                 { src: livingkitchen1, alt: "Living kitchen" },
