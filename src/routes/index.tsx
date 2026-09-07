@@ -14,6 +14,10 @@ import inside2 from "@/assets/slides/inside2.jpg";
 import inside3 from "@/assets/slides/inside3.jpg";
 import inside4 from "@/assets/slides/inside4.jpg";
 import kitchen3 from "@/assets/slides/kitchen3.jpg";
+import living1 from "@/assets/slides/living1.jpg";
+import living2 from "@/assets/slides/living2.jpg";
+import living3 from "@/assets/slides/living3.jpg";
+import living4 from "@/assets/slides/living4.jpg";
 import livingkitchen1 from "@/assets/slides/livingkitchen1.jpg";
 import {
   ArrowRight,
@@ -299,18 +303,29 @@ function HomePage() {
       {/* SECTION 5: WHY PROPERTY OWNERS TRUST US */}
       <section className="py-20 md:py-40 bg-secondary">
         <div className="container-x">
-          <div className="max-w-2xl mb-16">
-            <span className="gold-line" />
-            <p className="eyebrow mt-6">Why property owners trust us</p>
-            <h2 className="mt-4 text-4xl md:text-5xl">
-              Why Property Owners{" "}
-              <span className="italic text-gold">Trust Us</span>.
-            </h2>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              SGP brings together dependable management, attentive property
-              care, and clear communication to create a more confident and
-              streamlined ownership experience.
-            </p>
+          <div className="grid gap-12 lg:grid-cols-2 items-end mb-16">
+            <div className="max-w-2xl">
+              <span className="gold-line" />
+              <p className="eyebrow mt-6">Why property owners trust us</p>
+              <h2 className="mt-4 text-4xl md:text-5xl">
+                Why Property Owners{" "}
+                <span className="italic text-gold">Trust Us</span>.
+              </h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                SGP brings together dependable management, attentive property
+                care, and clear communication to create a more confident and
+                streamlined ownership experience.
+              </p>
+            </div>
+            <ImageCarousel
+              className="relative w-full aspect-[16/10]"
+              images={[
+                { src: living1, alt: "Living room" },
+                { src: living2, alt: "Open living space" },
+                { src: living3, alt: "Bright living room" },
+                { src: living4, alt: "Living room at dusk" },
+              ]}
+            />
           </div>
           <div className="grid gap-px bg-border border border-border md:grid-cols-3">
             {[
