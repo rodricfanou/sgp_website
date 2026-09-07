@@ -299,16 +299,16 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 5: WHY PROPERTY OWNERS TRUST US */}
-      <section className="py-20 md:py-40 bg-secondary">
-        <div className="container-x">
+      {/* SECTION 5: WHY PARTNER WITH US */}
+      <section className="bg-secondary">
+        <div className="container-x py-20 md:py-40">
           <div className="grid gap-12 lg:grid-cols-2 items-end mb-16">
             <div className="max-w-2xl">
               <span className="gold-line" />
-              <p className="eyebrow mt-6">Why property owners trust us</p>
+              <p className="eyebrow mt-6">Why partner with us</p>
               <h2 className="mt-4 text-4xl md:text-5xl">
-                Why Property Owners{" "}
-                <span className="italic text-gold">Trust Us</span>.
+                Why Partner{" "}
+                <span className="italic text-gold">With Us</span>.
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
                 SGP brings together dependable management, attentive property
@@ -369,6 +369,65 @@ function HomePage() {
             ))}
           </div>
         </div>
+        <div className="bg-ink text-cream">
+          <div className="container-x py-20 md:py-32 grid gap-12 md:gap-16 lg:grid-cols-2 items-center">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <ImageCarousel
+                className="relative h-full w-full"
+                images={[
+                  { src: interiorBedroom, alt: "Bedroom" },
+                  { src: inside3, alt: "Bedroom interior" },
+                  { src: inside4, alt: "Bright interior" },
+                  { src: inside2, alt: "Interior" },
+                  { src: kitchen3, alt: "Kitchen" },
+                  { src: livingkitchen1, alt: "Living kitchen" },
+                ]}
+              />
+            </div>
+            <div className="space-y-8">
+              <span className="gold-line" />
+              <p className="eyebrow !text-cream/60">For owners</p>
+              <ul className="space-y-6">
+                {[
+                  [
+                    "Less wear & tear",
+                    "Daily professional cleaning keeps every surface in top condition.",
+                  ],
+                  [
+                    "Faithful, on-time payouts",
+                    "Reliable monthly deposits — no chasing, no surprises.",
+                  ],
+                  [
+                    "Better guest profile",
+                    "Verified corporate clients and vetted travelers, not long-term tenants.",
+                  ],
+                  [
+                    "End-to-end operations",
+                    "Maintenance, marketing, supply, support — handled.",
+                  ],
+                ].map(([t, b]) => (
+                  <li
+                    key={t}
+                    className="border-t border-cream/10 pt-5 flex gap-6"
+                  >
+                    <span className="text-gold font-serif text-2xl leading-none">
+                      ·
+                    </span>
+                    <div>
+                      <p className="font-medium text-cream">{t}</p>
+                      <p className="text-cream/60 text-sm mt-1 leading-relaxed">
+                        {b}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <Link to="/contact" className="btn-outline text-cream inline-block">
+                Start Earning
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* SECTION 6: THE SUMMIT GLOBAL PROPERTY WAY */}
@@ -425,71 +484,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 8: OWNER SPLIT */}
-      <section className="bg-ink text-cream">
-        <div className="container-x py-20 md:py-40 grid gap-12 md:gap-16 lg:grid-cols-2 items-center">
-          <div className="relative aspect-[4/5] overflow-hidden">
-            <ImageCarousel
-              className="relative h-full w-full"
-              images={[
-                { src: interiorBedroom, alt: "Bedroom" },
-                { src: inside3, alt: "Bedroom interior" },
-                { src: inside4, alt: "Bright interior" },
-                { src: inside2, alt: "Interior" },
-                { src: kitchen3, alt: "Kitchen" },
-                { src: livingkitchen1, alt: "Living kitchen" },
-              ]}
-            />
-          </div>
-          <div className="space-y-8">
-            <span className="gold-line" />
-            <p className="eyebrow !text-cream/60">For owners</p>
-            <h2 className="text-cream text-4xl md:text-5xl">
-              Why Partner With Us?
-            </h2>
-            <ul className="space-y-6">
-              {[
-                [
-                  "Less wear & tear",
-                  "Daily professional cleaning keeps every surface in top condition.",
-                ],
-                [
-                  "Faithful, on-time payouts",
-                  "Reliable monthly deposits — no chasing, no surprises.",
-                ],
-                [
-                  "Better guest profile",
-                  "Verified corporate clients and vetted travelers, not long-term tenants.",
-                ],
-                [
-                  "End-to-end operations",
-                  "Maintenance, marketing, supply, support — handled.",
-                ],
-              ].map(([t, b]) => (
-                <li
-                  key={t}
-                  className="border-t border-cream/10 pt-5 flex gap-6"
-                >
-                  <span className="text-gold font-serif text-2xl leading-none">
-                    ·
-                  </span>
-                  <div>
-                    <p className="font-medium text-cream">{t}</p>
-                    <p className="text-cream/60 text-sm mt-1 leading-relaxed">
-                      {b}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <Link to="/contact" className="btn-outline text-cream inline-block">
-              Start Earning
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 9: HOW SGP WORKS */}
+      {/* SECTION 8: HOW SGP WORKS */}
       <section className="py-20 md:py-40">
         <div className="container-x">
           <div className="max-w-2xl mb-16">
@@ -530,7 +525,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 10: CONTACT */}
+      {/* SECTION 9: CONTACT */}
       <section id="inquiry" className="bg-secondary py-20 md:py-40">
         <div className="container-x grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5 space-y-6">
