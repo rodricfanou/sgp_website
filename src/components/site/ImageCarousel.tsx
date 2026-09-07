@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export type Slide = {
   src: string;
@@ -19,6 +19,23 @@ export function ImageCarousel({
   className = "",
 }: ImageCarouselProps) {
   const [active, setActive] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const clearTimer = useCallback(() => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+
+  const startTimer = useCallback(() => {
+    clearTimer();
+    if (images.length < 2) return;
+    timerRef.current = setInterval(
+      () => setActive((current) => (current + 1) % images.length),
+      interval,
+    );
+  }, [clearTimer, images.length, interval]);
 
   useEffect(() => {
     images.forEach(({ src }) => {
@@ -28,16 +45,26 @@ export function ImageCarousel({
   }, [images]);
 
   useEffect(() => {
-    if (images.length < 2) return;
-    const id = setInterval(
-      () => setActive((current) => (current + 1) % images.length),
-      interval,
-    );
-    return () => clearInterval(id);
-  }, [images.length, interval]);
+    startTimer();
+    return clearTimer;
+  }, [startTimer, clearTimer]);
+
+  const goNext = useCallback(() => {
+    setActive((current) => (current + 1) % images.length);
+    startTimer();
+  }, [images.length, startTimer]);
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div
+      onClick={goNext}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") goNext();
+      }}
+      aria-label="Show next image"
+      className={`relative overflow-hidden cursor-pointer ${className}`}
+    >
       {images.map(({ src, alt }, i) => (
         <img
           key={src}

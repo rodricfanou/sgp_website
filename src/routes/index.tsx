@@ -75,7 +75,7 @@ function HomePage() {
             { src: outside2, alt: "Home exterior at sunset" },
           ]}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/80" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/80" />
         <div className="container-x relative pb-16 md:pb-32 pt-36 text-cream">
           <h1 className="mt-12 max-w-4xl font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
             Earn More From Your Property.{" "}
