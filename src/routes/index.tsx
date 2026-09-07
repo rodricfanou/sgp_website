@@ -108,7 +108,29 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2: CHOOSE YOUR PATH */}
+      {/* SECTION 2: TRUST BAR */}
+      <section className="border-y border-border bg-secondary">
+        <div className="container-x py-8 md:py-10">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm">
+            {[
+              "Vetted Corporate Guests",
+              "Monthly Owner Payouts",
+              "Professional Cleaning",
+              "Full-Service Management",
+              "24-Hour Guest Support",
+            ].map((item) => (
+              <span key={item} className="inline-flex items-center gap-2 text-muted-foreground">
+                <svg className="h-4 w-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: CHOOSE YOUR PATH */}
       <section className="py-20 md:py-32">
         <div className="container-x">
           <div className="max-w-2xl mb-12">
@@ -145,28 +167,6 @@ function HomePage() {
                 Learn more <ArrowRight className="h-3 w-3" />
               </span>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3: TRUST BAR */}
-      <section className="border-y border-border bg-secondary">
-        <div className="container-x py-8 md:py-10">
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm">
-            {[
-              "Vetted Corporate Guests",
-              "Monthly Owner Payouts",
-              "Professional Cleaning",
-              "Full-Service Management",
-              "24-Hour Guest Support",
-            ].map((item) => (
-              <span key={item} className="inline-flex items-center gap-2 text-muted-foreground">
-                <svg className="h-4 w-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                {item}
-              </span>
-            ))}
           </div>
         </div>
       </section>
@@ -419,7 +419,17 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: OWNER SPLIT */}
+      {/* SECTION 7: PROPERTY IMAGERY */}
+      <section className="bg-ink py-20 md:py-28 border-y border-gold/20">
+        <div className="container-x flex flex-col items-center text-center">
+          <Logo size="xl" static />
+          <p className="mt-10 font-serif italic text-gold text-xl md:text-2xl tracking-wide">
+            Managing Properties. Elevating Value.
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION 8: OWNER SPLIT */}
       <section className="bg-ink text-cream">
         <div className="container-x py-20 md:py-40 grid gap-12 md:gap-16 lg:grid-cols-2 items-center">
           <div className="relative aspect-[4/5] overflow-hidden">
@@ -483,7 +493,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 8: HOW SGP WORKS */}
+      {/* SECTION 9: HOW SGP WORKS */}
       <section className="py-20 md:py-40">
         <div className="container-x">
           <div className="max-w-2xl mb-16">
@@ -521,16 +531,6 @@ function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* SECTION 9: BRAND STAMP */}
-      <section className="bg-ink py-20 md:py-28 border-y border-gold/20">
-        <div className="container-x flex flex-col items-center text-center">
-          <Logo size="xl" static />
-          <p className="mt-10 font-serif italic text-gold text-xl md:text-2xl tracking-wide">
-            Managing Properties. Elevating Value.
-          </p>
         </div>
       </section>
 
