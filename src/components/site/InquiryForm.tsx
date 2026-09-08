@@ -18,32 +18,26 @@ export function InquiryForm() {
     const data = new FormData(e.currentTarget);
     const payload = Object.fromEntries(data.entries());
 
-    if (FORMSPREE_ENDPOINT) {
-      try {
-        const res = await fetch(FORMSPREE_ENDPOINT, {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error("Formspree rejected the submission");
-        setSent(true);
-      } catch {
-        setError(true);
-      } finally {
-        setSending(false);
-      }
+    if (!FORMSPREE_ENDPOINT) {
+      setError(true);
+      setSending(false);
       return;
     }
 
-    const subject = encodeURIComponent(
-      `Inquiry from ${data.get("name") || "website"}`,
-    );
-    const body = encodeURIComponent(
-      `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInstagram / Social: ${data.get("social") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
-    );
-    window.location.href = `mailto:roderick@roderickfanou.com?subject=${subject}&body=${body}`;
-    setSent(true);
-    setSending(false);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("Formspree rejected the submission");
+      setSent(true);
+    } catch (err) {
+      console.error("Form submission failed:", err);
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   if (sent) {

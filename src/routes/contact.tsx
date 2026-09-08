@@ -44,43 +44,35 @@ function ContactPage() {
       .trim()
       .replace(/\s+/g, " ");
 
-    if (FORMSPREE_ENDPOINT) {
-      const payload = {
-        name,
-        email: data.get("email"),
-        phone: data.get("phone"),
-        social: data.get("social"),
-        interest: data.get("interest"),
-        message: data.get("message"),
-      };
-      try {
-        const res = await fetch(FORMSPREE_ENDPOINT, {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error("Formspree rejected the submission");
-        setSent(true);
-      } catch {
-        setError(true);
-      } finally {
-        setSending(false);
-      }
+    if (!FORMSPREE_ENDPOINT) {
+      setError(true);
+      setSending(false);
       return;
     }
 
-    const subject = encodeURIComponent(`Inquiry from ${name || "website"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInstagram / Social: ${data.get("social") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
-    );
-    const a = document.createElement("a");
-    a.href = `mailto:roderick@roderickfanou.com?subject=${subject}&body=${body}`;
-    a.style.display = "none";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setSent(true);
-    setSending(false);
+    const payload = {
+      name,
+      email: data.get("email"),
+      phone: data.get("phone"),
+      social: data.get("social"),
+      interest: data.get("interest"),
+      message: data.get("message"),
+    };
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("Formspree rejected the submission");
+      setSent(true);
+    } catch (err) {
+      console.error("Form submission failed:", err);
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
