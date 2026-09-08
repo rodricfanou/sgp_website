@@ -4,6 +4,10 @@ import { Field } from "@/components/ui/Field";
 import { useState, type FormEvent } from "react";
 import { Mail, Check } from "lucide-react";
 
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as
+  | string
+  | undefined;
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
@@ -28,14 +32,43 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError(false);
+    setSending(true);
     const data = new FormData(e.currentTarget);
-    const name =
-      `${data.get("firstName") || ""} ${data.get("lastName") || ""}`.trim() ||
-      "website";
-    const subject = encodeURIComponent(`Inquiry from ${name}`);
+    const name = `${data.get("firstName") || ""} ${data.get("lastName") || ""}`
+      .trim()
+      .replace(/\s+/g, " ");
+
+    if (FORMSPREE_ENDPOINT) {
+      const payload = {
+        name,
+        email: data.get("email"),
+        phone: data.get("phone"),
+        interest: data.get("interest"),
+        message: data.get("message"),
+      };
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error("Formspree rejected the submission");
+        setSent(true);
+      } catch {
+        setError(true);
+      } finally {
+        setSending(false);
+      }
+      return;
+    }
+
+    const subject = encodeURIComponent(`Inquiry from ${name || "website"}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
     );
@@ -46,6 +79,7 @@ function ContactPage() {
     a.click();
     document.body.removeChild(a);
     setSent(true);
+    setSending(false);
   }
 
   return (
@@ -94,8 +128,7 @@ function ContactPage() {
                 />
                 <h2 className="mt-6 text-3xl">Thank you.</h2>
                 <p className="mt-4 text-muted-foreground">
-                  Your email client should have opened. We'll be in touch
-                  shortly.
+                  Your message has been sent. We'll get back to you shortly.
                 </p>
               </div>
             ) : (
@@ -126,8 +159,14 @@ function ContactPage() {
                   </select>
                 </div>
                 <Field label="Tell us more" name="message" textarea />
-                <button type="submit" className="btn-primary">
-                  Send message
+                {error && (
+                  <p className="text-sm text-destructive">
+                    Something went wrong — please email us directly at
+                    roderick@roderickfanou.com.
+                  </p>
+                )}
+                <button type="submit" className="btn-primary" disabled={sending}>
+                  {sending ? "Sending…" : "Send message"}
                 </button>
               </form>
             )}

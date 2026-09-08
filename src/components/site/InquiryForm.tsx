@@ -1,13 +1,40 @@
 import { useState, type FormEvent } from "react";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { Field } from "@/components/ui/Field";
+
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as
+  | string
+  | undefined;
 
 export function InquiryForm() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError(false);
+    setSending(true);
     const data = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(data.entries());
+
+    if (FORMSPREE_ENDPOINT) {
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error("Formspree rejected the submission");
+        setSent(true);
+      } catch {
+        setError(true);
+      } finally {
+        setSending(false);
+      }
+      return;
+    }
+
     const subject = encodeURIComponent(
       `Inquiry from ${data.get("name") || "website"}`,
     );
@@ -16,6 +43,7 @@ export function InquiryForm() {
     );
     window.location.href = `mailto:roderick@roderickfanou.com?subject=${subject}&body=${body}`;
     setSent(true);
+    setSending(false);
   }
 
   if (sent) {
@@ -24,7 +52,7 @@ export function InquiryForm() {
         <Check className="h-10 w-10 text-gold mx-auto" strokeWidth={1.4} />
         <h3 className="mt-6 text-3xl">Thank you.</h3>
         <p className="mt-4 text-muted-foreground">
-          Your email client should have opened. We'll respond shortly.
+          Your message has been sent. We'll get back to you shortly.
         </p>
       </div>
     );
@@ -58,8 +86,14 @@ export function InquiryForm() {
         </div>
       </div>
       <Field label="Message" name="message" textarea colSpan />
-      <button type="submit" className="btn-primary">
-        Send inquiry
+      {error && (
+        <p className="text-sm text-destructive">
+          Something went wrong — please email us directly at
+          roderick@roderickfanou.com.
+        </p>
+      )}
+      <button type="submit" className="btn-primary" disabled={sending}>
+        {sending ? "Sending…" : "Send inquiry"}
       </button>
     </form>
   );
