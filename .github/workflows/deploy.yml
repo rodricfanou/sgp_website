@@ -30,7 +30,10 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      - name: Build
+        run: npm run build
+        env:
+          VITE_FORMSPREE_ENDPOINT: https://formspree.io/f/mkoyqdla
 
       - name: Prerender and prepare output
         run: |
