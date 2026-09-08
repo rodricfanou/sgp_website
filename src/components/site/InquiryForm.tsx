@@ -12,7 +12,7 @@ export function InquiryForm() {
       `Inquiry from ${data.get("name") || "website"}`,
     );
     const body = encodeURIComponent(
-      `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
+      `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInstagram / Social: ${data.get("social") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
     );
     window.location.href = `mailto:roderick@roderickfanou.com?subject=${subject}&body=${body}`;
     setSent(true);
@@ -39,6 +39,7 @@ export function InquiryForm() {
         <Field label="Name" name="name" required />
         <Field label="Email" name="email" type="email" required />
         <Field label="Phone" name="phone" type="tel" />
+        <Field label="Instagram / Social Media" name="social" />
         <div>
           <label htmlFor="interest" className="eyebrow block mb-3">
             I'm interested in

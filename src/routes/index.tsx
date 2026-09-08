@@ -10,6 +10,7 @@ import { ImageCarousel } from "@/components/site/ImageCarousel";
 import outside1 from "@/assets/slides/outside1.jpg";
 import outside2 from "@/assets/slides/outside2.jpg";
 import outside4 from "@/assets/slides/outside4.jpg";
+import outside5 from "@/assets/slides/outside5.jpg";
 import inside2 from "@/assets/slides/inside2.jpg";
 import inside3 from "@/assets/slides/inside3.jpg";
 import inside4 from "@/assets/slides/inside4.jpg";
@@ -18,6 +19,7 @@ import living1 from "@/assets/slides/living1.jpg";
 import living2 from "@/assets/slides/living2.jpg";
 import living3 from "@/assets/slides/living3.jpg";
 import living4 from "@/assets/slides/living4.jpg";
+import living5 from "@/assets/slides/living5.jpg";
 import livingkitchen1 from "@/assets/slides/livingkitchen1.jpg";
 import {
   ArrowRight,
@@ -78,6 +80,7 @@ function HomePage() {
             { src: outside1, alt: "Luxury home exterior" },
             { src: outside4, alt: "Property exterior at twilight" },
             { src: outside2, alt: "Home exterior at sunset" },
+            { src: outside5, alt: "Home exterior" },
           ]}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/80" />
@@ -323,6 +326,7 @@ function HomePage() {
                 { src: living2, alt: "Open living space" },
                 { src: living3, alt: "Bright living room" },
                 { src: living4, alt: "Living room at dusk" },
+                { src: living5, alt: "Living room" },
               ]}
             />
           </div>
