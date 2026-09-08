@@ -49,6 +49,7 @@ function ContactPage() {
         name,
         email: data.get("email"),
         phone: data.get("phone"),
+        social: data.get("social"),
         interest: data.get("interest"),
         message: data.get("message"),
       };
@@ -70,7 +71,7 @@ function ContactPage() {
 
     const subject = encodeURIComponent(`Inquiry from ${name || "website"}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
+      `Name: ${name}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "—"}\nInstagram / Social: ${data.get("social") || "—"}\nInterest: ${data.get("interest")}\n\n${data.get("message") || ""}`,
     );
     const a = document.createElement("a");
     a.href = `mailto:roderick@roderickfanou.com?subject=${subject}&body=${body}`;
@@ -139,6 +140,7 @@ function ContactPage() {
                   <Field label="Email" name="email" type="email" required />
                   <Field label="Phone" name="phone" type="tel" />
                 </div>
+                <Field label="Instagram / Social Media" name="social" />
                 <div>
                   <label className="eyebrow block mb-3" htmlFor="interest">
                     I'm interested in
